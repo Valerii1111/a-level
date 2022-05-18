@@ -1,0 +1,193 @@
+@keyframes square {
+0% {
+position:absolute;
+top: 0;
+left: 0;
+background: red;
+}
+
+25% {
+top: calc(100% - 100px);
+left: 0;
+background: blue;
+}
+
+50% {
+top: calc(100% - 100px);
+left: calc(100% - 100px);
+background: green;
+}
+
+75% {
+top: 0;
+left: calc(100% - 100px);
+background: yellow;
+}
+
+100% {
+position:absolute;
+top: 0;
+left: 0;
+background: red;
+}
+}
+
+
+html {
+    box-sizing: border-box;
+    width: 100%;
+    }
+
+section.part_two {
+    position: relative;
+    display: block;
+    width: 50%;
+    
+}
+
+.part_two .box {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin-bottom: 150px;
+    }
+
+.part_two .box:nth-child(1) {
+    background: red;
+   
+    top: 20px;
+    left: 20px;
+}
+
+.part_two .box:nth-child(2) {
+    background: blue;
+    top: 70px;
+    left: -20px;
+    z-index: 1;
+}
+
+.part_two .box:nth-child(3) {
+    background: green;
+    top: 130px;
+    left: -60px;
+}
+
+.card-holder {
+    background: #0d5825;
+    color: white;
+    font-size: 25px;
+    padding: 30px;
+    width: 600px;
+}
+
+.card-holder blockquote {
+    text-align: center;
+    text-align: 1.2;
+}
+
+.cards {
+    padding: 100px;
+}
+
+.cards img {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    transition: top 0.5s linear;
+    }
+
+
+.cards img:nth-child(1) {
+    margin: 0 -40px;
+    transform: rotate(-18deg);
+}
+
+.cards img:nth-child(2) {
+    margin: 0 -60px;
+    transform: rotate(-5deg);
+    padding-bottom: 15px;
+}
+
+.cards img:nth-child(3) {
+    margin: 0 -40px;
+    transform: rotate(15deg);
+}
+
+.cards img:hover {
+    top: -25px;
+}
+
+.anim-box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: whitesmoke;
+}
+
+.color-box {
+    animation: square 5s infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    }
+
+    .sidebar-menu {
+        background: gray;
+        width: 200px;
+        height: 450px;
+        color: white;
+        padding-top: 20px;
+        transition: 1s;
+        transform: translateX(-90%);
+    }
+    
+    .sidebar-menu:hover {
+        transform: translateX(-10%);
+    }
+    
+    .sidebar-menu p {
+        position: relative;
+        left: 90px;
+        top: 200px;
+        text-transform: uppercase;
+        transform: rotate(90deg);
+    }
+    
+    .sidebar-menu:hover p {
+        opacity: 0;
+    }
+    
+    
+    .sidebar-menu a {
+        text-decoration: none;
+        display: inline-block;
+        padding-top: 30px;
+    }
+    
+    .sidebar-menu li:hover {
+        color: orange;
+        transition: .3s;
+        cursor: pointer;
+    }
+    
+    .sidebar-menu li {
+        list-style: none;
+        text-transform: uppercase;
+    }
+    
+    .sidebar-menu li::before {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border: 1px solid black;
+        background-color: orange;
+        margin-right: 10px;
+        transform: rotate(45deg);
+    }
