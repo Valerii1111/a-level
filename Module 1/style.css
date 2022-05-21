@@ -30,6 +30,7 @@ img {
 
 p {
     margin-bottom: 20px;
+    text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -213,6 +214,7 @@ ol {
     margin-top: 0px;
     width: 71px;
     height: 15px;
+    text-decoration: none;
 }
 
 .project-description p:first-child {
@@ -471,13 +473,14 @@ transform: translate(-50%, -50%);
     margin-bottom: 50px;
 }
 
-.section-form .btn {
-    padding: 18.5px 48px;
-    position: relative;
+.form-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-input [button] {
-
+.section-form .btn {
+    padding: 18.5px 48px;
 }
 
 /* Footer */
