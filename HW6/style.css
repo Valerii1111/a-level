@@ -24,7 +24,7 @@ ul, ol {
 
 
 main {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     display: flex;
 }
 
@@ -38,13 +38,11 @@ main {
 }
 
 .container {
-    /* min-width: 1230px; */
     padding: 0 15px;
     margin: 0 auto;
 }
 
 .header {
-    padding: 15px 0;
     background: #d2b837;
     position: relative;
 }
@@ -57,13 +55,13 @@ main {
 
 .logo {
     display: inline-block;
-    max-width: 120px;
+    max-width: 130px;
     margin-right: 15px;
 }
 
 .logo img {
     vertical-align: middle;
-    width: 200px;
+    width: 100%;
 }
 
 .nav {
@@ -71,10 +69,7 @@ main {
     flex-grow: 1;
     justify-content: flex-end;
     align-items: center;
-    margin-left: 15px;
-   
-    
-    
+    margin-left: 15px;    
 }
 
 .burger-checkbox {
@@ -165,25 +160,6 @@ main {
 
 }
 
-.login-btn {
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px 20px;
-    background: green;
-    color: white;
-    border: 1px solid green;
-    border-radius: 4px;
-    margin-right: 30px;
-}
-
-.header-btn {
-    margin-left: 15px;
-}
-
-.login-btn:hover {
-    background: #fff;
-    color: green;
-}
 
 .holder {
     display: flex;
@@ -191,28 +167,16 @@ main {
 }
 
 .sidebar {
-    /* flex: 0 0 210px; */
-    max-width: 210px;
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.sidebar-left {
-    background: #c798b9;
-}
-
-.sidebar-right {
-    background: #9cb1c7;
-    order: 1;
+    display: none;
+    visibility: hidden;
+    
 }
 
 .content {
     padding: 20px;
-    /* flex: 1 0 auto; */
     text-align: center;
-    width: (100% - 420px);
+    width: calc(100% - 420px);
+    flex-grow: 1;
 }
 
 .card-box h1 {
@@ -229,19 +193,7 @@ main {
 
 .col {
     padding: 0 5px 10px;
-    flex: 0 0 33.333%;
-}
-
-@media (min-width: 768px) {
-    .col { 
-        width: 50%;
-    }
-}
-
-@media (min-width: 1024px) {
-    .col {
-        width: 33.333%;
-    }
+    flex: 0 0 100%;
 }
 
 .card {
@@ -315,8 +267,8 @@ main {
 .holder {
     display: flex;
     flex-wrap: wrap;
-    width: 300px;
-    height: 100px;
+    max-width: 300px;
+    min-height: 100px;
     border: 2px solid black;
     border-radius: 15px 15px 0 0;
     overflow: hidden;
@@ -361,11 +313,35 @@ order: 4;
     order: 2;
 }
 
-@media (min-width: 1024px) {
-      .burger {
+@media (min-width: 576px) {
+    .sidebar {
+        flex: 0 0 20%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        visibility: visible;
+    }
+
+    .sidebar-left {
+        background: #c798b9;
+    }
+
+    .sidebar-right {
+        background: #9cb1c7;
+        order: 1;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .col {
+        flex: 0 0 50%;
+    }
+
+    .burger {
         display: none;
     }
-   
+
 
     .header-list {
         position: static;
@@ -377,10 +353,17 @@ order: 4;
     }
 
     .header-item {
-            padding-bottom: 0px;
-        }
+        padding-bottom: 0px;
+    }
 
-    .header-item + .header-item {
+    .header-item+.header-item {
         padding-left: 15px;
-        }
+    }
+}
+
+@media (min-width: 1024px) {
+      
+    .col {
+        flex: 0 0 33.333%;
+    }
 }
